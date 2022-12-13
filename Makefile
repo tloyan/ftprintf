@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+         #
+#    By: tloyan <tloyan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 14:08:40 by thloyan           #+#    #+#              #
-#    Updated: 2022/12/06 15:40:55 by thloyan          ###   ########.fr        #
+#    Updated: 2022/12/12 22:51:09 by tloyan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,12 @@ LIBFT_PATH = libft
 LIBFT_INCLUDES = $(LIBFT_PATH)/includes
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 OBJDIR = objs
 SRCDIR = srcs
 
-SRCS = ft_printf.c
+SRCS = ft_printf.c ft_printf_utils.c
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 
@@ -63,5 +63,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+test:
+	cc main.c -g -L. -lftprintf -Iincludes
 
 .PHONY: all clean fclean re
