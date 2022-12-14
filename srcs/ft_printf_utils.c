@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tloyan <tloyan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:27:26 by tloyan            #+#    #+#             */
-/*   Updated: 2022/12/12 23:29:48 by tloyan           ###   ########.fr       */
+/*   Updated: 2022/12/14 15:19:11 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_intlen_base(int n, int baselen)
+int	ft_nbrlen_base(long int nb, int baselen)
 {
 	int	len;
 
 	len = 1;
-	while (n / baselen)
+	while (nb / baselen)
 	{
-		n = n / baselen;
-		len++;
+		len = len + 1;
+		nb = nb / baselen;
 	}
 	return (len);
 }
@@ -32,7 +32,7 @@ int	ft_putnbr_ul_base(unsigned long n, char *base)
 	int		baselen;
 
 	baselen = ft_strlen(base);
-	len = ft_intlen_base(n, baselen);
+	len = ft_nbrlen_base(n, baselen);
 	buffer[len] = 0;
 	while (len-- > 0)
 	{
@@ -42,26 +42,36 @@ int	ft_putnbr_ul_base(unsigned long n, char *base)
 	return (write(1, buffer, ft_strlen(buffer)));
 }
 
-int	ft_putnbr(int n)
+long long int	ft_abs(long long int nb)
 {
-	char	buffer[12];
-	int		len;
-	int		is_negative;
+	if (nb < 0)
+		return (-nb);
+	return (nb);
+}
 
-	len = ft_intlen(n);
-	is_negative = 0;
-	if (n == INT_MIN)
-		return (write(1, "-2147483648", 11));
-	if (n < 0)
+int	ft_nbrlen(long long int nb)
+{
+	int	len;
+
+	len = 1;
+	while (nb / 10)
 	{
-		is_negative = 1;
-		n = n * -1;
-		buffer[0] = '-';
+		len = len + 1;
+		nb = nb / 10;
 	}
-	buffer[len + is_negative] = 0;
+	return (len);
+}
+
+int	ft_putnbr_ul(unsigned long n)
+{
+	char	buffer[13];
+	int		len;
+
+	len = ft_nbrlen(n);
+	buffer[len] = 0;
 	while (len-- > 0)
 	{
-		buffer[len + is_negative] = ((n % 10) + '0');
+		buffer[len] = ((n % 10) + '0');
 		n = n / 10;
 	}
 	return (write(1, buffer, ft_strlen(buffer)));

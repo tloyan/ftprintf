@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tloyan <tloyan@student.42.fr>              +#+  +:+       +#+         #
+#    By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 14:08:40 by thloyan           #+#    #+#              #
-#    Updated: 2022/12/12 22:51:09 by tloyan           ###   ########.fr        #
+#    Updated: 2022/12/14 15:22:50 by thloyan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ CFLAGS = -Wall -Wextra -Werror -g
 OBJDIR = objs
 SRCDIR = srcs
 
-SRCS = ft_printf.c ft_printf_utils.c
+SRCS = ft_printf.c ft_parser_utils.c ft_parser.c ft_print_char.c \
+	ft_print_hex.c ft_print_nbr.c ft_print_str.c ft_printf_utils.c
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 
