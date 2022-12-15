@@ -6,7 +6,7 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:18:34 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/14 15:24:31 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/15 13:36:24 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ int	print_data(va_list *args, t_options options)
 	else if (options.specifier == 's')
 		return (print_str(va_arg(*args, char *), &options));
 	else if (options.specifier == 'p')
-		return (print_hex(va_arg(*args, unsigned int), &options));
+		return (print_ptr(va_arg(*args, unsigned long), &options));
 	else if (options.specifier == 'd' || options.specifier == 'i')
 		return (print_int(va_arg(*args, int), &options));
 	else if (options.specifier == 'u')
 		return (print_unsigned_int(va_arg(*args, unsigned int), &options));
 	else if (options.specifier == 'x' || options.specifier == 'X')
 		return (print_hex(va_arg(*args, unsigned int), &options));
-
 	return (0);
 }
 

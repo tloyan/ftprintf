@@ -6,7 +6,7 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:17:08 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/14 15:26:08 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/15 14:12:22 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct s_options {
 	char				specifier;
 }	t_options;
 
-int				ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...)
+				__attribute__ ((format (printf, 1, 2)));
 int				extract_data(const char *format, va_list *args, int *index);
 int				print_data(va_list *args, t_options options);
 
@@ -59,22 +60,6 @@ long long int	ft_abs(long long int nb);
 int				ft_nbrlen(long long int nb);
 int				ft_putnbr_ul(unsigned long n);
 
-
-
-
-
-
-
-
-
-
-int	print_hex(unsigned int nbr, t_options *options);
-
-// int	ft_intlen_base(int n, int baselen);
-int	ft_putnbr_ul_base(unsigned long n, char *base);
-int	ft_putnbr(unsigned long n);
-void	display_options(t_options *options);
-int	ft_nbrlen(long long int nb);
-int	ft_nbrlen_base(long int nb, int baselen);
+int				print_ptr(unsigned long nbr, t_options *options);
 
 #endif

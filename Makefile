@@ -6,7 +6,7 @@
 #    By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 14:08:40 by thloyan           #+#    #+#              #
-#    Updated: 2022/12/14 15:22:50 by thloyan          ###   ########.fr        #
+#    Updated: 2022/12/15 17:14:39 by thloyan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJDIR = objs
 SRCDIR = srcs
 
 SRCS = ft_printf.c ft_parser_utils.c ft_parser.c ft_print_char.c \
-	ft_print_hex.c ft_print_nbr.c ft_print_str.c ft_printf_utils.c
+	ft_print_hex.c ft_print_nbr.c ft_print_str.c ft_printf_utils.c ft_print_ptr.c
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 
@@ -65,7 +65,7 @@ fclean: clean
 
 re: fclean all
 
-test:
-	cc main.c -g -L. -lftprintf -Iincludes
+# test:
+# 	cc main.c -g -L. -lftprintf -Iincludes -Ilibft/includes
 
 .PHONY: all clean fclean re

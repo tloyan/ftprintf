@@ -6,7 +6,7 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:43:34 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/14 15:08:19 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/15 13:35:33 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	get_precision(const char *format, int *index)
 	return (ft_atoi(buffer));
 }
 
-
 void	get_flag(char c, t_options *options)
 {
 	if (c == '-')
@@ -69,9 +68,7 @@ void	init_options(t_options **options)
 	(*options)->flag_space = 0;
 	(*options)->flag_sharp = 0;
 	(*options)->flag_zero = 0;
-
 	(*options)->precision = 0;
-
 	(*options)->width = 0;
 	(*options)->precision_width = 0;
 	(*options)->specifier = 0;
@@ -103,4 +100,3 @@ void	get_options(const char *format, t_options *options, int *index)
 	}
 	(*index) = i;
 }
-

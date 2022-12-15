@@ -6,7 +6,7 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:49:44 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/14 15:25:45 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/15 13:36:04 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ int	is_specifier(char c)
 	return (0);
 }
 
-
 int	is_flag(char c)
 {
 	if (c == '-' || c == '+' || c == '#' || c == ' ' || c == '0')
 		return (c);
 	return (0);
 }
-
