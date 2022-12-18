@@ -6,11 +6,12 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:18:34 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/15 13:36:24 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/18 12:06:29 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int	print_data(va_list *args, t_options options)
 {

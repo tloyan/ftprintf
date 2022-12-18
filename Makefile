@@ -6,7 +6,7 @@
 #    By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/06 14:08:40 by thloyan           #+#    #+#              #
-#    Updated: 2022/12/15 17:14:39 by thloyan          ###   ########.fr        #
+#    Updated: 2022/12/18 12:25:42 by thloyan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(LIBFT_PATH)/libft.a $(OBJDIR) $(OBJS)
+$(NAME): $(LIBFT_PATH) $(OBJDIR) $(OBJS)
 	mv $(LIBFT_PATH)/libft.a $(NAME)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
@@ -50,22 +50,25 @@ $(NAME): $(LIBFT_PATH)/libft.a $(OBJDIR) $(OBJS)
 $(OBJDIR):
 	mkdir $(OBJDIR)
 
-$(LIBFT_PATH)/libft.a:
+$(LIBFT_PATH):
 	make -C $(LIBFT_PATH) all
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I${INCLUDES} -I$(LIBFT_INCLUDES)
 
-clean:
+clean: libft_clean
 	rm -f $(OBJS)
-	rmdir $(OBJDIR)
+	rm -rf $(OBJDIR)
 
-fclean: clean
+fclean: clean libft_fclean
 	rm -f $(NAME)
 
 re: fclean all
 
-# test:
-# 	cc main.c -g -L. -lftprintf -Iincludes -Ilibft/includes
+libft_clean:
+	make -C $(LIBFT_PATH) clean
 
-.PHONY: all clean fclean re
+libft_fclean:
+	make -C $(LIBFT_PATH) fclean
+
+.PHONY: all clean fclean re $(LIBFT_PATH) libft_clean libft_fclean

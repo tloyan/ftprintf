@@ -6,12 +6,12 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:33:27 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/15 13:34:34 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/18 12:03:41 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <limits.h>
+#include "libft.h"
 
 static int	ft_nbrlen_ull_base(unsigned long long nb, int baselen)
 {

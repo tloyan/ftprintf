@@ -6,11 +6,12 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:36:27 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/15 13:35:03 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/18 12:06:20 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	print_sign(int nbr, t_options *options)
 {

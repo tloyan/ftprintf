@@ -6,11 +6,12 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:29:02 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/15 13:36:14 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/18 12:06:16 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	print_width_hex(long long int nbr, t_options *options)
 {

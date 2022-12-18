@@ -6,14 +6,13 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 14:17:08 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/15 14:12:22 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/18 12:06:00 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
 # include <stdarg.h>
 
 typedef struct s_options {

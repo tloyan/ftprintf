@@ -6,11 +6,12 @@
 /*   By: thloyan <thloyan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:43:34 by thloyan           #+#    #+#             */
-/*   Updated: 2022/12/15 13:35:33 by thloyan          ###   ########.fr       */
+/*   Updated: 2022/12/18 11:48:22 by thloyan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int	get_width(const char *format, int *index)
 {
